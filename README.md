@@ -77,9 +77,3 @@ Aquí tendremos cada una de las tareas con las funcionalidades de `borrar` y `ma
 
 Aquí un ejemplo de como debería de quedar:
 ![Lista de tareas](./src/assets/listadetareas.png)
-
-
-
-
-
-
