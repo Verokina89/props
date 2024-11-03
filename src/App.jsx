@@ -1,6 +1,6 @@
 import {useState} from 'react'
-// import AddTaskForm from './components/AddTaskForm'
-// import Task from './components/Task'
+import AddTaskForm from './components/AddTaskForm'
+import Task from './components/Task'
 import './App.css'
 
 const App = () => {
@@ -29,14 +29,28 @@ const App = () => {
 
   //marcar tarea realizada
   const toggleComplete = (taskId) => {
-    setTasks(task.map(task =>
-      task.id === taskId ? {...task, completed: !task.completed} : task
-    ))
-  }
+    setTasks(
+      tasks.map((task) =>
+      task.id === taskId 
+      ? {...task, completed: !task.completed} 
+      : task
+      )
+    )
+  };
 
   return (
     <>
     <h1>Lista de Tareas</h1>
+    <AddTaskForm addTask={addTask} />
+    <ul>
+      {task.map(task => (
+        <Task key={task.id}
+          task={task}
+          deleteTask={deleteTask}
+          toggleComplete={toggleComplete}
+        />
+      ))}
+    </ul>
 
     </>
   );
