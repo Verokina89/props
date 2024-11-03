@@ -43,7 +43,7 @@ const App = () => {
     <h1>Lista de Tareas</h1>
     <AddTaskForm addTask={addTask} />
     <ul>
-      {task.map(task => (
+      {tasks.map(task => (
         <Task key={task.id}
           task={task}
           deleteTask={deleteTask}
